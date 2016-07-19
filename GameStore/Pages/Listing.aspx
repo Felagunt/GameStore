@@ -8,20 +8,30 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <div>
+            <%
+                foreach (GameStore.Models.Game game in GetGames())
+                {
+                    Response.Write(String.Format(@"
+                        <div class='item'>
+                            <h3>{0}</h3>
+                            {1}
+                            <h4>{2:c}</h>
+                        </div>",
+                        game.Name, game.Description, game.Price));
+                }
+            %>
+        </div>
+    </form>
     <div>
         <%
-            foreach (GameStore.Models.Game game in GetGames())
+            for(int i=1;i<=MaxPage;i++)
             {
-                Response.Write(String.Format(@"
-                    <div class='item'>
-                        <h3>{0}</h3>
-                        {1}
-                        <h4>{2:c}</h>
-                    </div>",
-                    game.Name, game.Description, game.Price));
+                Response.Write(
+                    String.Format("<a href='/Pages/Listing.aspx?page{0}'{1}>{2}</a>",
+                    i, i == CurrentPage ? "class='selected'" : "", i));
             }
         %>
     </div>
-    </form>
 </body>
 </html>
