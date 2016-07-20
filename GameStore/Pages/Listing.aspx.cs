@@ -41,6 +41,8 @@ namespace GameStore.Pages
             string reqValue = (string)RouteData.Values["page"] ??
                 Request.QueryString["page"];
             return reqValue != null && int.TryParse(reqValue, out page) ? page : 1;
+        }
+
         protected IEnumerable<Game> GetGames()
         {
             return repository.Games
