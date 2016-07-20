@@ -14,8 +14,11 @@
                         <h3>{0}</h3>
                         {1}
                         <h4>{2:c}</h>
+                        <button name='add' type='submit' value='{3}'>
+                            Add to cart
+                        </button>
                     </div>",
-                    game.Name, game.Description, game.Price));
+                    game.Name, game.Description, game.Price,game.GameId));
             }
         %>
     </div>
