@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Listing.aspx.cs" Inherits="GameStore.Pages.Listing"
     MasterPageFile="~/Pages/Store.Master" %>
 <%@ import Namespace="System.Web.Routing" %>
-<%@ Import Namespace="GameStore.Pages" %>
+<%@ Import Namespace="GameStore.Pages" %>//it's wrong
 
 
 <asp:Content ContentPlaceHolderID="bodyContent" runat="server">

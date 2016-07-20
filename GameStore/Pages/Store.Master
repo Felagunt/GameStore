@@ -1,9 +1,10 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Store.master.cs" Inherits="GameStore.Pages.Store" %>
-
+<%@ Register TagPrefix="GS" TagName="CategoryLinks" 
+    Src="~/Controls/CategoryList.ascx" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
     <title>GameStore</title>
     <link rel ="stylesheet" href="/Content/Styles.css" />
 </head>
@@ -14,10 +15,10 @@
             <div class="title">GameStore - shop where you can buy awesome games</div>
         </div>
         <div id="categories">
-            //later
+            <GS:CategoryLinks runat="server" />
         </div>
         <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"/>
+            <asp:ContentPlaceHolder ID="bodyContent" runat="server"/>
         </div>
     </div>
     </form>
