@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
     <div>
         <div id="header">
-            <div class="title">GameStore - shop where you can buy awsome games</div>
+            <div class="title">GameStore - shop where you can buy awesome games</div>
         </div>
         <div id="categories">
             //later
