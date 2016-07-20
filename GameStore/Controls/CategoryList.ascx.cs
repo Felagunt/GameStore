@@ -32,6 +32,9 @@ namespace GameStore.Controls
 
         protected string CreateLinkHtml(string category)
         {
+            string selectedCategory = (string)Page.RouteData.Values["category"]
+                ?? Request.QueryString["category"];//highlighting the current category
+
             string path = RouteTable.Routes.GetVirtualPath(null, null,
                 new RouteValueDictionary() { { "category", category },
                     {"page", "1" } }).VirtualPath;

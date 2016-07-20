@@ -51,6 +51,16 @@ namespace GameStore.Pages
                 .Take(pageSize);
         }
 
+        //filtering games by category
+        protected IEnumerable<Game> FilterGames()
+        {
+            IEnumerable<Game> games = repository.Games;
+            string currentCategory = (string)RouteData.Values["category"] ??
+                Request.QueryString["category"];
+            return currentCategory == null ? games :
+                games.Where(p => p.Category == currentCategory);
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             
