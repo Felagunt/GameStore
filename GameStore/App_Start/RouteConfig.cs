@@ -13,10 +13,11 @@ namespace GameStore.App_Start
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            routes.MapPageRoute(null, "list/{category}/{page}",
+                "~?Pages/Listing.aspx");
             routes.MapPageRoute(null, "list/{page}", "~/Pages/listing.aspx");
             routes.MapPageRoute(null, "", "~/Pages/Listing.aspx");
-            routes.MapPageRoute(null, "list", "~/Pages/Listing.aspx");//make url if it invoked localhost through port 9021 :
-            //http:// localhost:9021/list
+            routes.MapPageRoute(null, "list", "~/Pages/Listing.aspx");
         }
     }
 }
